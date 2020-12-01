@@ -8,7 +8,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { ISlider } from '@/typings'
 
+const a: ISlider = { url: '' }
+
+console.log(a)
 export default defineComponent({
   name: 'Home',
   components: {
