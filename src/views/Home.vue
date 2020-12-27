@@ -1,22 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <x-drag :list="list" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import { ISlider } from '@/typings'
+import { defineComponent, reactive, toRefs, onMounted } from 'vue';
+import XDrag from '@/components/x-drag/index.vue'
 
-const a: ISlider = { url: '' }
-
-console.log(a)
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
+    XDrag
   },
+  setup () {
+    const data = reactive({
+      list: [1, 2, 3, 4, 5, 6, 7, 8]
+    })
+
+    return {
+      ...toRefs(data)
+    }
+  }
 });
 </script>

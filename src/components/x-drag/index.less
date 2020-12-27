@@ -1,0 +1,26 @@
+.x-drag {
+  height: 100%;
+  .item-wrapper {
+    position: relative;
+  }
+  .item {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid red;
+    &.itemTransition {
+      transition: transform 0.3s;
+    }
+    &.zIndex {
+      z-index: 2;
+      background-color: pink;
+    }
+  }
+  .info {
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+  }
+}
